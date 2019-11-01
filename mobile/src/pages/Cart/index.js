@@ -108,18 +108,14 @@ function Cart({ products, total, removeFromCart, updateAmountRequest }) {
 }
 
 Cart.propTypes = {
-	products: PropTypes.arrayOf({
-		id: PropTypes.number,
-		image: PropTypes.string,
-		title: PropTypes.string,
-		price: PropTypes.number,
-		amount: PropTypes.number,
-		subtotal: PropTypes.number,
-		priceFormatted: PropTypes.string,
-	}).isRequired,
-	total: PropTypes.number.isRequired,
+	products: PropTypes.any,
+	total: PropTypes.string.isRequired,
 	removeFromCart: PropTypes.func.isRequired,
 	updateAmountRequest: PropTypes.func.isRequired,
+};
+
+Cart.defaultProps = {
+	products: [],
 };
 
 const mapStateToProps = state => ({
